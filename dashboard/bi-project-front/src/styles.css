@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content {
+  margin: auto;
+  display: flex;
+  padding: 1em;
+}
+
+.item {
+  margin-right: 1em;
+}
+
+.prediction-button{
+  margin-top: 4em;
+}
+
+.error-message {
+  color: crimson;
+  font-weight: bold;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.feedback{
+  color: green;
+  font-weight: bold;
+  margin-top: 1em;
+  text-align: center;
+}
+
+h4 {
+  color: black;
+}

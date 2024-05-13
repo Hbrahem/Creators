@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="item">
+    <h4>Date</h4>
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="picker1"
+        placeholder="Choose a date"
+        [(ngModel)]="date"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button (click)="fetchPrediction()" class="item prediction-button">
+    Get Prediction
+  </button>
+  <div class="item error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>
+
+<div *ngIf="show_chart" echarts [options]="chartOption" class="chart"></div>

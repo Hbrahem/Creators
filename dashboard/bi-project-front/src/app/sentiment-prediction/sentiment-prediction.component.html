@@ -1,0 +1,15 @@
+<div class="container-sentiment">
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter your feedback</mat-label>
+    <input matInput [(ngModel)]="feedback" />
+  </mat-form-field>
+  <!-- <div class="item error-message" *ngIf="errorMessage">{{ errorMessage }}</div> -->
+</div>
+<button
+  mat-raised-button
+  (click)="fetchPrediction()"
+  class="item"
+>
+  Get Prediction
+</button>
+<div class="item error-message" *ngIf="errorMessage">{{ errorMessage }}</div>

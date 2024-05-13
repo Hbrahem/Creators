@@ -1,0 +1,58 @@
+
+<div>
+  <div class="content">
+    <div class="item">
+      <h4>Begin Date</h4>
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="picker1"
+          placeholder="Choose a date"
+          [(ngModel)]="begin_date"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="item">
+      <h4>End Date</h4>
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="picker2"
+          placeholder="Choose a date"
+          [(ngModel)]="end_date"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+  
+    <div class="item">
+      <h4>By :</h4>
+  
+      <mat-form-field>
+        <mat-label>Granularity</mat-label>
+        <mat-select [(ngModel)]="granularity">
+          <mat-option selected disabled>Select an option</mat-option>
+          <mat-option value="day">Day</mat-option>
+          <mat-option value="week">Week</mat-option>
+          <mat-option value="month">Month</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+  </div>
+  
+  <div>
+  
+    <button mat-raised-button (click)="fetchPrediction()" class="item prediction-button">
+      Get Prediction
+    </button>
+    <div class="item error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  
+  </div>
+</div>
+
+<div *ngIf="show_chart" echarts [options]="chartOption" class="chart"></div>

@@ -1,0 +1,117 @@
+
+
+<div class="wrapper" *ngIf="logged" style="overflow: hidden; color:black;">
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="leftside-menu"  style="background-color: white;">
+      <!-- LOGO -->
+      <a href="/" class="logo text-center logo-light" >
+        <span class="logo-lg" style="background-color: white;">
+          <img src="assets/images/logo.png" alt="" width="85px" />
+        </span>
+        <span class="logo-sm " style="background-color: white;" >
+          <img src="assets/images/logo.png" alt="" width="40px" />
+        </span>
+      </a>
+
+      <div class="h-100 super-back" id="leftside-menu-container" data-simplebar style="margin-top:30px;">
+        <!--- Sidemenu -->
+        <ul class="side-nav">
+          <li class="side-nav-title side-nav-item" style="color:white">Navigation</li>    
+            <li class="side-nav-item" *ngIf="role">
+              <a class="side-nav-link" href="/home" style="color:white">
+                <i class="uil-home-alt"></i>
+                <span > Dashboard </span>
+              </a>
+            </li>
+    
+            <li class="side-nav-item">
+              <a class="side-nav-link" href="/rush-hour" style="color:white">
+                <i class="uil-clock-eight"></i>
+                <span> Rush Hour </span>
+              </a>
+            </li>
+    
+            <li class="side-nav-item">
+              <a class="side-nav-link" href="/number-of-persons" style="color:white">
+                <i class="uil-users-alt"></i>
+                <span> Number of Persons </span>
+              </a>
+            </li>
+    
+            <li class="side-nav-item" *ngIf="role">
+              <a class="side-nav-link" href="/sentiment" style="color:white">
+                <i class="uil-meh"></i>
+                <span> Sentiment Prediction </span>
+              </a>
+            </li>
+
+            <li class="side-nav-item" *ngIf="role">
+              <a class="side-nav-link" href="/users" style="color:white">
+                <i class="uil-sign-out-alt"></i>
+                <span> Accounts </span>
+              </a>
+            </li>
+    
+            <li class="side-nav-item" (click)="logout()" >
+              <a class="side-nav-link" href="#" style="color:white">
+                <i class="uil-sign-out-alt"></i>
+                <span> Logout </span>
+              </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content-page">
+      <div class="content">
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+          <ul class="list-unstyled topbar-menu float-end mb-0">
+            <li class="dropdown notification-list d-lg-none">
+              <a
+                class="nav-link dropdown-toggle arrow-none"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                <i class="dripicons-search noti-icon"></i>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-animated dropdown-lg p-0"
+              >
+                <form class="p-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search ..."
+                    aria-label="Recipient's username"
+                  />
+                </form>
+              </div>
+            </li>
+          </ul>
+          <button class="button-menu-mobile open-left">
+            <i class="mdi mdi-menu"></i>
+          </button>
+          <div class="app-search dropdown d-none d-lg-block">
+           
+          </div>
+        </div>
+        <!-- end Topbar -->
+
+        <!-- Start Content-->
+        <div class="container-fluid" style="margin-top: -100px;">
+          <!-- start page title -->
+          <div class="row"><router-outlet></router-outlet></div>
+          <!-- end page title -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+  </div>
+
+  <router-outlet></router-outlet>
